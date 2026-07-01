@@ -1957,13 +1957,13 @@
                         const ex = extractMessageText(m);
                         if (!ex.text && !ex.thinking) continue;
                         msgCount++;
-                        charCount += (ex.text?.length || 0) + (ex.thinking?.length || 0);
+                        charCount += (ex.text?.length || 0) //+ (ex.thinking?.length || 0);
                         if (ex.who === 'human') {
                             humanCount++;
                             humanChars += (ex.text?.length || 0);
                         } else {
                             aiCount++;
-                            aiChars += (ex.text?.length || 0) + (ex.thinking?.length || 0);
+                            aiChars += (ex.text?.length || 0) //+ (ex.thinking?.length || 0);
                         }
                     }
                     const title = safeTitle(conv?.name ?? conv?.title ?? `对话 ${idx + 1}`);
@@ -1988,13 +1988,13 @@
                         const e = map.get(dk);
                         e.msgs.push({ convTitle: title, convOrigIdx: idx, ex });
                         e.msgCount++;
-                        e.charCount += (ex.text?.length || 0) + (ex.thinking?.length || 0);
+                        e.charCount += (ex.text?.length || 0) //+ (ex.thinking?.length || 0)
                         if (ex.who === 'human') {
                             e.humanCount++;
                             e.humanChars += (ex.text?.length || 0);
                         } else {
                             e.aiCount++;
-                            e.aiChars += (ex.text?.length || 0) + (ex.thinking?.length || 0);
+                            e.aiChars += (ex.text?.length || 0) //+ (ex.thinking?.length || 0)
                         }
                     }
                 });
